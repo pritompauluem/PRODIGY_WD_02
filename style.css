@@ -1,0 +1,208 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.stopwatch-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+#display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: calc(50% - 5px);
+  height: 60px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn {
+  background-color: #4caf50;
+}
+.pause-btn {
+  background-color: #ff9800;
+}
+.reset-btn {
+  background-color: #e74c3c;
+}
+.lap-btn {
+  background-color: #3498db;
+}
+
+.lap-container {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.lap-times {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.lap-times li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #cccccc;
+  transition: all 0.3s ease;
+}
+
+.lap-times li:hover {
+  transform: translateX(5px);
+  color: #ffffff;
+}
+
+.lap-times li::before {
+  content: "→";
+  margin-right: 10px;
+  color: #ffffff;
+}
+
+.circle-container {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 4px solid #3498db;
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+.pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background-color: rgba(52, 152, 219, 0.3);
+  animation: pulse 2s ease-out infinite;
+  display: none;
+}
+
+.download-btn {
+  background-color: #27ae60;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.download-btn:hover {
+  background-color: #2ecc71;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+  .stopwatch-container {
+    padding: 20px;
+  }
+
+  #display {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    height: 50px;
+  }
+
+  .circle-container {
+    width: 100px;
+    height: 100px;
+  }
+}

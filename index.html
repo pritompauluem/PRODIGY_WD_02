@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Stopwatch with CSV Export</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="stopwatch-container">
+        <div class="circle-container">
+          <div class="circle"></div>
+          <div class="pulse"></div>
+        </div>
+        <h1 id="display">00:00:00.000</h1>
+        <div class="button-container">
+          <button id="start-btn" class="btn start-btn">Start</button>
+          <button id="pause-btn" class="btn pause-btn" disabled>Pause</button>
+          <button id="reset-btn" class="btn reset-btn">Reset</button>
+          <button id="lap-btn" class="btn lap-btn">Lap</button>
+        </div>
+        <div class="lap-container">
+          <ul id="lap-times" class="lap-times"></ul>
+        </div>
+        <button id="download-btn" class="btn download-btn">
+          Download Lap Count Data
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
